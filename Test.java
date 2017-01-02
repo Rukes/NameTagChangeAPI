@@ -8,12 +8,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Test extends JavaPlugin implements Listener{
     
     @Override
-    public void onEnable(){}
+    public void onEnable(){
+        Bukkit.getPluginManager().registerEvents(this, this);
+    }
     @Override
     public void onDisable(){}
     
     @EventHandler
     public void onJoin(PlayerJoinEvent e){
-        NameTagChangeAPI.changeName("Â§5Â§nAwesomeKing", e.getPlayer(), true);
+        NameTagChangeAPI.changeName("§5§nAwesomeKing", e.getPlayer(), true);
     }
 }
